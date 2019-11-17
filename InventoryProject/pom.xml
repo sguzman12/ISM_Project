@@ -8,7 +8,34 @@
 	<name>ISM_Java_Inventory</name>
 	<!-- Output to jar format -->
 	<packaging>jar</packaging>
-	
+	<build>
+	<plugins>
+	<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <executions>
+        <execution>
+            <phase>package</phase>
+            <goals>
+                <goal>single</goal>
+            </goals>
+            <configuration>
+                <archive>
+                <manifest>
+                    <mainClass>
+                        controller.ISM_Main
+                    </mainClass>
+                </manifest>
+                </archive>
+                <descriptorRefs>
+                    <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+</plugins>
+	</build>
 	<dependencies>
 		<!-- Hibernate Core Dependency -->
 		<dependency>
@@ -36,4 +63,5 @@
 			<type>pom</type>
 		</dependency>
 	</dependencies>
+	
 </project>
