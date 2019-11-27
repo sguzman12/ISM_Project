@@ -4,6 +4,11 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+/**
+ * ProductsSold DAO class. Retrieves id from ProductSoldComposite class.
+ * @author Sigfredo Guzman
+ *
+ */
 @Entity
 @Table(name = "productsold")
 public class ProductSold

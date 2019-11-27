@@ -11,11 +11,32 @@ import org.hibernate.Transaction;
 import dao.Product;
 import utilities.HibernateUtilities;
 
+/**
+ * Model class for Product table inside database.
+ * 
+ * @author Sigfredo Guzman
+ *
+ */
 public class ProductModel
 {
 	Transaction transaction = null;
 
-	// "Description", "Quantity", "Category", "Price"
+	/**
+	 * Add new Products into Products Table. Parameters passed in are used to
+	 * create a new Products Object using the Products class in the dao package.
+	 * Session object is created using the Hibernate Utility class which then
+	 * saves the new product object. If catch is thrown then transaction is
+	 * rolledback.
+	 * 
+	 * @param description
+	 *            Product Name
+	 * @param quantity
+	 *            Product Quantity
+	 * @param category
+	 *            Product Category
+	 * @param price
+	 *            Product Price
+	 */
 	public void addProductToDB(String description, int quantity,
 			String category, BigDecimal price)
 	{
@@ -41,6 +62,15 @@ public class ProductModel
 		}
 	}
 
+	/**
+	 * Search Product table using Product Last Name. Creates a new session
+	 * object and searches using HQL. Results are saved into an ArrayList of
+	 * Product and returned.
+	 * 
+	 * @param input
+	 *            Product Name
+	 * @return list Product ArrayList matching Input.
+	 */
 	public List<Product> searchProducts(String input)
 	{
 

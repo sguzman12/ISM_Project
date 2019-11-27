@@ -23,6 +23,11 @@ public class HibernateUtilities
 
 	private static SessionFactory sessionFactory;
 
+	/**
+	 * Creates Session Factory to connect Hibernate with Database
+	 * 
+	 * @return sessionFactory Object
+	 */
 	public static SessionFactory getSessionFactory()
 	{
 
@@ -70,6 +75,9 @@ public class HibernateUtilities
 
 	}
 
+	/**
+	 * Shutdown session.
+	 */
 	public static void shutdown()
 	{
 

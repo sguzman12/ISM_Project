@@ -14,6 +14,11 @@ import javafx.application.*;
 //Author: Sigfredo Guzman
 //Date: 9/11/2019
 
+/**
+ * 
+ * @author Sigfredo Guzman
+ * Main Class. Begins Program by setting up Swing GUI.
+ */
 public class ISM_Main extends Application
 {
 
@@ -64,6 +69,9 @@ public class ISM_Main extends Application
 
 	}
 
+	/**
+	 * JavaFX. Not currently used.
+	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception
 	{

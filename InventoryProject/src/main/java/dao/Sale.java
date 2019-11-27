@@ -37,21 +37,48 @@ public class Sale
 	@Column(name = "SaleAmount")
 	private BigDecimal saleAmount;
 
+	/**
+	 * Default Constructor
+	 */
 	public Sale()
 	{
 	}
 
+	/**
+	 * One parameter Constructor
+	 * 
+	 * @param id
+	 *            Sale Number
+	 */
 	public Sale(int id)
 	{
 		this.id = id;
 	}
 
+	/**
+	 * Two parameter Constructor
+	 * 
+	 * @param id
+	 *            Sale Number
+	 * @param cust
+	 *            Customer ID
+	 */
 	public Sale(int id, int cust)
 	{
 		this.id = id;
 		cstID = cust;
 	}
 
+	/**
+	 * Three parameter Constructor
+	 * 
+	 * @param id
+	 *            Sale Number
+	 * @param cust
+	 *            Customer ID
+	 * @param saleA
+	 *            Sale Amount
+	 */
 	public Sale(int id, int cust, BigDecimal saleA)
 	{
 		this.id = id;
@@ -59,6 +86,18 @@ public class Sale
 		saleAmount = saleA;
 	}
 
+	/**
+	 * Four parameter Constructor
+	 * 
+	 * @param id
+	 *            Sale Number
+	 * @param cust
+	 *            Customer ID
+	 * @param day
+	 *            Date of Sale
+	 * @param saleA
+	 *            Sale Amount
+	 */
 	public Sale(int id, int cust, Date day, BigDecimal saleA)
 	{
 		this.id = id;
@@ -67,6 +106,20 @@ public class Sale
 		saleAmount = saleA;
 	}
 
+	/**
+	 * Used to Return Sales. Order ID can be null.
+	 * 
+	 * @param id
+	 *            Sale Number
+	 * @param cust
+	 *            Customer ID
+	 * @param orderID
+	 *            Order Number. Can be null
+	 * @param day
+	 *            Date of Sale
+	 * @param saleA
+	 *            Sale Amount
+	 */
 	public Sale(int id, int cust, Integer orderID, Date day, BigDecimal saleA)
 	{
 		this.id = id;
@@ -106,7 +159,7 @@ public class Sale
 		if(ordNum == null)
 		{
 			this.ordNum = 0;
-			
+
 		}
 		else
 		{

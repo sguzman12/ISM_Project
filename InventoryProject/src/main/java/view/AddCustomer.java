@@ -12,6 +12,13 @@ import javax.swing.JTextField;
 
 import controller.Control_Main;
 
+/**
+ * New Customer Frame. Collects input from user and sends after submit button
+ * press to control class to add new Customer.
+ * 
+ * @author Sigfredo Guzman
+ *
+ */
 public class AddCustomer extends JFrame
 {
 	/**
@@ -19,7 +26,7 @@ public class AddCustomer extends JFrame
 	 */
 	private static final long serialVersionUID = 1L;
 	private Control_Main control;
-	
+
 	private JTextField fNameInput;
 	private JTextField lNameInput;
 	private JTextField addressInput;
@@ -32,11 +39,14 @@ public class AddCustomer extends JFrame
 	private int zip;
 	private BigDecimal pay;
 
+	/**
+	 * Default constructor. Creates Frame and adds action handlers to buttons.
+	 */
 	public AddCustomer()
 	{
 		control = new Control_Main();
-		//frame = new JFrame("New Employee");
-		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// frame = new JFrame("New Employee");
+		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 
 		JLabel lblFirstName = new JLabel("First Name:");
@@ -111,7 +121,6 @@ public class AddCustomer extends JFrame
 		emailInput.setBounds(158, 183, 86, 20);
 		getContentPane().add(emailInput);
 
-		
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener()
 		{
@@ -206,14 +215,14 @@ public class AddCustomer extends JFrame
 					{
 						email = emailInput.getText().trim();
 					}
-					
 
 					if(fName != null && lName != null && address != null
 							&& city != null && state != null && zip != 0
-							&& phone != null && email != null )
+							&& phone != null && email != null)
 					{
-						
-						control.addCustomer(fName, lName, address, city, state, zip, phone, email);
+
+						control.addCustomer(fName, lName, address, city, state,
+								zip, phone, email);
 						fNameInput.setText("");
 						lNameInput.setText("");
 						addressInput.setText("");
@@ -222,7 +231,7 @@ public class AddCustomer extends JFrame
 						zipInput.setText("");
 						phoneInput.setText("");
 						emailInput.setText("");
-						
+
 					}
 				}
 				catch(NullPointerException ex)
@@ -235,8 +244,10 @@ public class AddCustomer extends JFrame
 		getContentPane().add(btnSubmit);
 
 		JButton btnCancel = new JButton("Clear");
-		btnCancel.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnCancel.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
 				fNameInput.setText("");
 				lNameInput.setText("");
 				addressInput.setText("");
@@ -245,7 +256,7 @@ public class AddCustomer extends JFrame
 				zipInput.setText("");
 				phoneInput.setText("");
 				emailInput.setText("");
-				
+
 			}
 		});
 		btnCancel.setBounds(183, 284, 89, 23);

@@ -8,12 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * Customers Object DAO class.
+ * Customers Object DAO class. Sets Up Annotations for use in Hibernate ORM.
  * 
  * @author Sigfredo Guzman
  *
  */
-
 @Entity
 @Table(name = "customers")
 public class Customer
@@ -47,21 +46,48 @@ public class Customer
 	@Column(name = "Email")
 	private String email;
 
+	/**
+	 * Default Constructor
+	 */
 	public Customer()
 	{
 	}
 
+	/**
+	 * One parameter Constructor. Used When searching for customer object.
+	 * 
+	 * @param id
+	 *            Customer ID number
+	 */
 	public Customer(int id)
 	{
 		this.id = id;
 	}
 
+	/**
+	 * Two parameter Constructor.
+	 * 
+	 * @param first
+	 *            Customer First Name
+	 * @param last
+	 *            Customer Last Name
+	 */
 	public Customer(String first, String last)
 	{
 		this.first = first;
 		this.last = last;
 	}
 
+	/**
+	 * Three parameter Constructor
+	 * 
+	 * @param id
+	 *            Customer ID
+	 * @param first
+	 *            Customer First Name
+	 * @param last
+	 *            Customer Last Name
+	 */
 	public Customer(int id, String first, String last)
 	{
 		this.id = id;
@@ -69,6 +95,18 @@ public class Customer
 		this.last = last;
 	}
 
+	/**
+	 * Four parameter Constructor
+	 * 
+	 * @param id
+	 *            Customer ID
+	 * @param first
+	 *            Customer First Name
+	 * @param last
+	 *            Customer Last Name
+	 * @param phone
+	 *            Customer Phone number
+	 */
 	public Customer(int id, String first, String last, String phone)
 	{
 		this.id = id;
@@ -77,6 +115,26 @@ public class Customer
 		this.phone = phone;
 	}
 
+	/**
+	 * Used when Adding New Customer to table.
+	 * 
+	 * @param first
+	 *            Customer First Name
+	 * @param last
+	 *            Customer Last Name
+	 * @param address
+	 *            Customer Street Address
+	 * @param city
+	 *            Customer City
+	 * @param state
+	 *            Customer State
+	 * @param zip
+	 *            Customer Zip Code
+	 * @param phone
+	 *            Customer Phone Number
+	 * @param email
+	 *            Customer Email
+	 */
 	public Customer(String first, String last, String address, String city,
 			String state, int zip, String phone, String email)
 	{
@@ -90,6 +148,28 @@ public class Customer
 		this.email = email;
 	}
 
+	/**
+	 * Used when returning ArrayList of all Customers
+	 * 
+	 * @param id
+	 *            Customer ID
+	 * @param first
+	 *            Customer First Name
+	 * @param last
+	 *            Customer Last Name
+	 * @param address
+	 *            Customer Street Address
+	 * @param city
+	 *            Customer City
+	 * @param state
+	 *            Customer State
+	 * @param zip
+	 *            Customer Zip Code
+	 * @param phone
+	 *            Customer Phone Number
+	 * @param email
+	 *            Customer Email
+	 */
 	public Customer(int id, String first, String last, String address,
 			String city, String state, int zip, String phone, String email)
 	{

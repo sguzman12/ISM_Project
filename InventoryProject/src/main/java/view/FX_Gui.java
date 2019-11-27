@@ -5,12 +5,17 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+/**
+ * GUI interface for JavaFX. UnderDevelopment.
+ * 
+ * @author Sigfredo Guzman
+ *
+ */
 public class FX_Gui
 {
-	
+
 	public FX_Gui() throws Exception
 	{
-		
 
 	}
 
@@ -22,11 +27,11 @@ public class FX_Gui
 		buildStage(HEIGHT, WIDTH);
 		buildLabel();
 		buildScene(sceneHeight, sceneWidth);
-		
+
 		stage.setScene(scene);
-		
+
 		stage.show();
-		
+
 	}
 
 	/**
@@ -41,26 +46,32 @@ public class FX_Gui
 
 	}
 
+	/**
+	 * Build Scene
+	 * 
+	 * @param height
+	 * @param width
+	 */
 	private void buildScene(double height, double width)
 	{
 		scene = new Scene(label);
 	}
-	
-	private void buildLabel() 
+
+	private void buildLabel()
 	{
 		label = new Label("Hello World, JavaFX !");
 	}
-	
-	private void buildButton() 
+
+	private void buildButton()
 	{
-		
+
 	}
 
 	private double HEIGHT = 600;
 	private double WIDTH = 500;
 	private double sceneHeight = 400;
 	private double sceneWidth = 200;
-	
+
 	private Stage stage;
 	private Scene scene;
 	private Label label;

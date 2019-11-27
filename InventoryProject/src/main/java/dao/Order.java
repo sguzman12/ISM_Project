@@ -37,30 +37,68 @@ public class Order
 	@Column(name = "DeliveryDate")
 	private Date deliveryDate;
 
+	/**
+	 * Default Constructor
+	 */
 	public Order()
 	{
 	}
 
+	/**
+	 * One parameter Constructor
+	 * 
+	 * @param id
+	 *            Order Number
+	 */
 	public Order(int id)
 	{
 		this.id = id;
 	}
 
+	/**
+	 * Two parameter Constructor
+	 * 
+	 * @param id
+	 *            Order Number
+	 * @param cust
+	 *            Customer ID
+	 */
 	public Order(int id, int cust)
 	{
 		this.id = id;
 		customer = cust;
 	}
 
+	/**
+	 * Three parameter Constructor
+	 * 
+	 * @param id
+	 *            Order Number
+	 * @param cust
+	 *            Customer ID
+	 * @param employee
+	 *            Employee ID
+	 */
 	public Order(int id, int cust, int employee)
 	{
 		this.id = id;
 		customer = cust;
 		this.employee = employee;
 	}
-	
-	public Order(int customer, int employee, Date orderDate,
-			Date deliveryDate) 
+
+	/**
+	 * Four parameter Constructor. Used to add new order.
+	 * 
+	 * @param customer
+	 *            Customer ID
+	 * @param employee
+	 *            Employee ID
+	 * @param orderDate
+	 *            Date Ordered
+	 * @param deliveryDate
+	 *            Date to Deliver
+	 */
+	public Order(int customer, int employee, Date orderDate, Date deliveryDate)
 	{
 		this.customer = customer;
 		this.employee = employee;
@@ -68,6 +106,20 @@ public class Order
 		this.deliveryDate = deliveryDate;
 	}
 
+	/**
+	 * Constructor used to return orders.
+	 * 
+	 * @param id
+	 *            Order Number
+	 * @param customer
+	 *            Customer ID
+	 * @param employee
+	 *            Employee ID
+	 * @param orderDate
+	 *            Date Ordered
+	 * @param deliveryDate
+	 *            Date to Deliver
+	 */
 	public Order(int id, int customer, int employee, Date orderDate,
 			Date deliveryDate)
 	{

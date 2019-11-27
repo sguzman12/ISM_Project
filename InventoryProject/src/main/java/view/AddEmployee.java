@@ -11,6 +11,13 @@ import java.awt.event.ActionListener;
 import java.math.BigDecimal;
 import java.awt.event.ActionEvent;
 
+/**
+ * New Employee Frame. Collects input from user and sends after submit button
+ * press to control class to add new Employee.
+ * 
+ * @author Sigfredo Guzman
+ *
+ */
 public class AddEmployee extends JFrame
 {
 	/**
@@ -18,7 +25,7 @@ public class AddEmployee extends JFrame
 	 */
 	private static final long serialVersionUID = 1L;
 	private Control_Main control;
-	
+
 	private JTextField fNameInput;
 	private JTextField lNameInput;
 	private JTextField addressInput;
@@ -33,11 +40,14 @@ public class AddEmployee extends JFrame
 	private int zip;
 	private BigDecimal pay;
 
+	/**
+	 * Default Constructor creates frame and adds action handlers to buttons.
+	 */
 	public AddEmployee()
 	{
 		control = new Control_Main();
-		//frame = new JFrame("New Employee");
-		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// frame = new JFrame("New Employee");
+		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 
 		JLabel lblFirstName = new JLabel("First Name:");
@@ -233,9 +243,9 @@ public class AddEmployee extends JFrame
 					}
 					else
 					{
-						//System.out.println(payInput.getText());
+						// System.out.println(payInput.getText());
 						pay = new BigDecimal(payInput.getText());
-						//System.out.println(pay);
+						// System.out.println(pay);
 					}
 					if(contactInput == null
 							|| contactInput.getText().trim().equals(""))
@@ -254,7 +264,8 @@ public class AddEmployee extends JFrame
 							&& phone != null && email != null && pay != null
 							&& emercont != null)
 					{
-						control.addEmployee(fName, lName, address, city, state, zip, phone, email, pay, emercont);
+						control.addEmployee(fName, lName, address, city, state,
+								zip, phone, email, pay, emercont);
 						fNameInput.setText("");
 						lNameInput.setText("");
 						addressInput.setText("");
@@ -277,8 +288,10 @@ public class AddEmployee extends JFrame
 		getContentPane().add(btnSubmit);
 
 		JButton btnCancel = new JButton("Clear");
-		btnCancel.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnCancel.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
 				fNameInput.setText("");
 				lNameInput.setText("");
 				addressInput.setText("");

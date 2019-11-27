@@ -7,12 +7,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Ingredient DAO class
+ * 
+ * @author Sigfredo Guzman
+ *
+ */
 @Entity
 @Table(name = "ingredients")
 public class Ingredient
 {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "IngredientID")
 	private int id;
 
@@ -22,21 +28,48 @@ public class Ingredient
 	@Column(name = "Quantity")
 	private int quantity;
 
+	/**
+	 * Default Constructor
+	 */
 	public Ingredient()
 	{
 	}
 
+	/**
+	 * One parameter Constructor
+	 * 
+	 * @param id
+	 *            Ingredient ID
+	 */
 	public Ingredient(int id)
 	{
 		this.id = id;
 	}
 
+	/**
+	 * Two parameter Constructor
+	 * 
+	 * @param id
+	 *            Ingredient ID
+	 * @param des
+	 *            Ingredient Name
+	 */
 	public Ingredient(int id, String des)
 	{
 		this.id = id;
 		description = des;
 	}
 
+	/**
+	 * Three parameter Constructor
+	 * 
+	 * @param id
+	 *            Ingredient ID
+	 * @param des
+	 *            Ingredient Name
+	 * @param quantity
+	 *            Ingredient Quantity
+	 */
 	public Ingredient(int id, String des, int quantity)
 	{
 		this.id = id;

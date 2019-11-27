@@ -19,6 +19,13 @@ import dao.Order;
 
 import javax.swing.JTextArea;
 
+/**
+ * New Order Frame. Collects input from user and sends after submit button press
+ * to control class to add new Order.
+ * 
+ * @author Sigfredo Guzman
+ *
+ */
 public class AddOrder extends JFrame
 {
 	/**
@@ -36,6 +43,10 @@ public class AddOrder extends JFrame
 	private JTextField customerInput;
 	private JTextField employeeInput;
 
+	/**
+	 * Default Constructor creates frame and connects action handlers to
+	 * buttons.
+	 */
 	public AddOrder()
 	{
 		orderList = new ArrayList<Order>();
@@ -61,7 +72,7 @@ public class AddOrder extends JFrame
 		quantityInput.setColumns(10);
 		quantityInput.setBounds(90, 33, 86, 20);
 		getContentPane().add(quantityInput);
-		
+
 		final JTextArea txtAreaOrder = new JTextArea();
 		txtAreaOrder.setColumns(2);
 		txtAreaOrder.setBounds(10, 110, 414, 124);
@@ -72,8 +83,7 @@ public class AddOrder extends JFrame
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				
-				
+
 				try
 				{
 					if(descriptionInput == null
@@ -124,17 +134,19 @@ public class AddOrder extends JFrame
 								.parseInt(employeeInput.getText().trim());
 					}
 
-					if(item != 0 && itemQuantity != 0 && employee !=0 && customer !=0)
+					if(item != 0 && itemQuantity != 0 && employee != 0
+							&& customer != 0)
 					{
 						DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
 						Date dateobj1 = new Date();
-						
+
 						Date dateobj2 = new Date();
-						
+
 						txtAreaOrder.append(item + "   " + itemQuantity + "\n");
-						Order orderItem = new Order(customer, employee, dateobj1, dateobj2);
+						Order orderItem = new Order(customer, employee,
+								dateobj1, dateobj2);
 						orderList.add(orderItem);
-						
+
 					}
 				}
 				catch(NullPointerException ex)
@@ -160,36 +172,36 @@ public class AddOrder extends JFrame
 		});
 		btnCancel.setBounds(158, 263, 89, 23);
 		getContentPane().add(btnCancel);
-		
-		
-		
+
 		JButton btnCreateOrder = new JButton("Create Order");
-		btnCreateOrder.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				if(!orderList.isEmpty()) 
+		btnCreateOrder.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+
+				if(!orderList.isEmpty())
 				{
 					control.addOrder(orderList);
 				}
-				
+
 			}
 		});
 		btnCreateOrder.setBounds(306, 263, 118, 23);
 		getContentPane().add(btnCreateOrder);
-		
+
 		JLabel lblCustomer = new JLabel("Customer:");
 		lblCustomer.setBounds(10, 67, 70, 14);
 		getContentPane().add(lblCustomer);
-		
+
 		customerInput = new JTextField();
 		customerInput.setBounds(90, 64, 86, 20);
 		getContentPane().add(customerInput);
 		customerInput.setColumns(10);
-		
+
 		JLabel lblEmployee = new JLabel("Employee:");
 		lblEmployee.setBounds(197, 11, 70, 14);
 		getContentPane().add(lblEmployee);
-		
+
 		employeeInput = new JTextField();
 		employeeInput.setBounds(293, 8, 86, 20);
 		getContentPane().add(employeeInput);

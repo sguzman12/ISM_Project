@@ -39,6 +39,15 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import java.awt.Window.Type;
 
+/**
+ * Main Frame class. Tabs are used to show different options, (Sales, Orders,
+ * Products, Customers, Employees). Search input bar allows user to input search
+ * criteria for each. Output is displayed inside JTable. Option to Add new
+ * Object for each tab can be found by clicking inside the Add Button.
+ * 
+ * @author Sigfredo Guzman
+ *
+ */
 public class Swing_Gui extends JFrame
 {
 
@@ -58,6 +67,9 @@ public class Swing_Gui extends JFrame
 	private JTable employeeTable;
 	private DefaultTableModel model;
 
+	/**
+	 * Default Constructor creates frame and adds action handlers.
+	 */
 	public Swing_Gui()
 	{
 		setTitle("Raiders Bakery");
@@ -73,9 +85,11 @@ public class Swing_Gui extends JFrame
 		salesTab.setLayout(null);
 
 		JButton btnNewButton = new JButton("New Sale");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
+		btnNewButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+
 				AddSale sale = new AddSale();
 				sale.setSize(500, 500);
 				sale.setTitle("New Sale Form");

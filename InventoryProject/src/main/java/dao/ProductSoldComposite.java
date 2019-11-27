@@ -6,6 +6,11 @@ import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+/**
+ * Embeddable DAO class for linking table, ProductsSold. Used to create Composite Primary Key.
+ * @author Sigfredo Guzman
+ *
+ */
 @Embeddable
 public class ProductSoldComposite implements Serializable
 {
@@ -20,10 +25,18 @@ public class ProductSoldComposite implements Serializable
     @Column(name = "ProductID")
     private int productID;
  
+    /**
+     * Default Constructor
+     */
     public ProductSoldComposite() {
     	
     }
  
+    /**
+     * Constructor for Composite Primary Key.
+     * @param saleNum Sales Number
+     * @param productID Product ID
+     */
     public ProductSoldComposite(int saleNum, int productID) {
         this.saleNum = saleNum;
         this.productID = productID;
@@ -37,6 +50,9 @@ public class ProductSoldComposite implements Serializable
         return productID;
     }
  
+    /**
+     * Needed Override equals method.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -46,6 +62,9 @@ public class ProductSoldComposite implements Serializable
                 Objects.equals(getProductID(), that.getProductID());
     }
  
+    /**
+     * Needed Override hashCode method.
+     */
     @Override
     public int hashCode() {
         return Objects.hash(getSaleNum(), getProductID());

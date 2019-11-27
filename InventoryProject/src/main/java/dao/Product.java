@@ -23,10 +23,10 @@ public class Product
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ProductID")
 	private int id;
-	
+
 	@Column(name = "Description")
 	private String description;
-	
+
 	@Column(name = "Quantity")
 	private int quantity;
 
@@ -36,29 +36,69 @@ public class Product
 	@Column(name = "Price")
 	private BigDecimal price;
 
+	/**
+	 * Default Constructor.
+	 */
 	public Product()
 	{
 	}
 
+	/**
+	 * One parameter Constructor
+	 * 
+	 * @param id
+	 *            Product ID
+	 */
 	public Product(int id)
 	{
 		this.id = id;
 	}
 
+	/**
+	 * Two parameter Constructor
+	 * 
+	 * @param id
+	 *            Product ID
+	 * @param quantity
+	 *            Product Quantity
+	 */
 	public Product(int id, int quantity)
 	{
 		this.id = id;
 		this.quantity = quantity;
 	}
 
+	/**
+	 * Three parameter Constructor
+	 * 
+	 * @param id
+	 *            Product ID
+	 * @param quantity
+	 *            Product Quantity
+	 * @param price
+	 *            Product Price
+	 */
 	public Product(int id, int quantity, BigDecimal price)
 	{
 		this.id = id;
 		this.quantity = quantity;
 		this.price = price;
 	}
-	
-	public Product(String description, int quantity, String category, BigDecimal price) 
+
+	/**
+	 * Four parameter Constructor. Used to add new product.
+	 * 
+	 * @param description
+	 *            Product Name
+	 * @param quantity
+	 *            Product Quantity
+	 * @param category
+	 *            Product Category
+	 * @param price
+	 *            Product Price
+	 */
+	public Product(String description, int quantity, String category,
+			BigDecimal price)
 	{
 		this.description = description;
 		this.quantity = quantity;
@@ -66,7 +106,22 @@ public class Product
 		this.price = price;
 	}
 
-	public Product(int id, String description, int quantity, String category, BigDecimal price)
+	/**
+	 * Five parameter Constructor. Used when retrieving products from table.
+	 * 
+	 * @param id
+	 *            Product ID
+	 * @param description
+	 *            Product Name
+	 * @param quantity
+	 *            Product Quantity
+	 * @param category
+	 *            Product Category
+	 * @param price
+	 *            Product Price
+	 */
+	public Product(int id, String description, int quantity, String category,
+			BigDecimal price)
 	{
 		this.id = id;
 		this.description = description;

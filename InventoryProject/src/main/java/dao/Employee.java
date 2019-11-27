@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * Employee DAO object class with annotations for hibernate.
+ * Employee Data Access Object class with annotations for hibernate.
  * 
  * @author Sigfredo Guzman
  *
@@ -48,27 +48,54 @@ public class Employee
 	@Column(name = "Email")
 	private String email;
 
-	@Column(name = "PayRate", columnDefinition="DECIMAL(10,2)")
+	@Column(name = "PayRate", columnDefinition = "DECIMAL(10,2)")
 	private BigDecimal pay;
 
 	@Column(name = "EmerConNum")
 	private String contactNum;
 
+	/**
+	 * Default Constructor
+	 */
 	public Employee()
 	{
 	}
 
+	/**
+	 * One parameter Constructor
+	 * 
+	 * @param id
+	 *            Employee ID
+	 */
 	public Employee(int id)
 	{
 
 	}
 
+	/**
+	 * Two parameter Constructor
+	 * 
+	 * @param first
+	 *            Employee First Name
+	 * @param last
+	 *            Employee Last Name
+	 */
 	public Employee(String first, String last)
 	{
 		this.first = first;
 		this.last = last;
 	}
 
+	/**
+	 * Three parameter constructor
+	 * 
+	 * @param id
+	 *            Employee ID
+	 * @param first
+	 *            Employee First Name
+	 * @param last
+	 *            Employee Last Name
+	 */
 	public Employee(int id, String first, String last)
 	{
 		this.id = id;
@@ -76,6 +103,18 @@ public class Employee
 		this.last = last;
 	}
 
+	/**
+	 * Four parameter Constructor
+	 * 
+	 * @param id
+	 *            Employee ID
+	 * @param first
+	 *            Employee First Name
+	 * @param last
+	 *            Employee Last Name
+	 * @param phone
+	 *            Employee Phone number
+	 */
 	public Employee(int id, String first, String last, String phone)
 	{
 		this.id = id;
@@ -84,9 +123,33 @@ public class Employee
 		this.phone = phone;
 	}
 
-	public Employee(String first, String last, String address,
-			String city, String state, int zip, String phone, String email,
-			BigDecimal pay, String contactNum)
+	/**
+	 * Constructor used for adding new employee.
+	 * 
+	 * @param first
+	 *            Employee First Name
+	 * @param last
+	 *            Employee Last Name
+	 * @param address
+	 *            Employee Street Address
+	 * @param city
+	 *            Employee City
+	 * @param state
+	 *            Employee State
+	 * @param zip
+	 *            Employee Zip Code
+	 * @param phone
+	 *            Employee Phone number
+	 * @param email
+	 *            Employee Email
+	 * @param pay
+	 *            Employee Pay Rate
+	 * @param contactNum
+	 *            Employee Emergency Contact Number
+	 */
+	public Employee(String first, String last, String address, String city,
+			String state, int zip, String phone, String email, BigDecimal pay,
+			String contactNum)
 	{
 		this.first = first;
 		this.last = last;
@@ -99,6 +162,33 @@ public class Employee
 		this.pay = pay;
 		this.contactNum = contactNum;
 	}
+
+	/**
+	 * Constructor used when retrieving searched employees
+	 * 
+	 * @param id
+	 *            Employee ID
+	 * @param first
+	 *            Employee First Name
+	 * @param last
+	 *            Employee Last Name
+	 * @param address
+	 *            Employee Street Address
+	 * @param city
+	 *            Employee City
+	 * @param state
+	 *            Employee State
+	 * @param zip
+	 *            Employee Zip Code
+	 * @param phone
+	 *            Employee Phone number
+	 * @param email
+	 *            Employee Email
+	 * @param pay
+	 *            Employee Pay Rate
+	 * @param contactNum
+	 *            Employee Emergency Contact Number
+	 */
 	public Employee(int id, String first, String last, String address,
 			String city, String state, int zip, String phone, String email,
 			BigDecimal pay, String contactNum)

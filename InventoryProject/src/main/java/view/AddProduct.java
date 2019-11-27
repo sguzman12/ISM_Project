@@ -12,6 +12,13 @@ import javax.swing.JTextField;
 
 import controller.Control_Main;
 
+/**
+ * New Product Frame. Collects input from user and sends after submit button
+ * press to control class to add new Product.
+ * 
+ * @author Sigfredo Guzman
+ *
+ */
 public class AddProduct extends JFrame
 {
 
@@ -19,9 +26,9 @@ public class AddProduct extends JFrame
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-private Control_Main control;
-	
+
+	private Control_Main control;
+
 	private JTextField descriptionInput;
 	private JTextField quantityInput;
 	private JTextField categoryInput;
@@ -30,11 +37,15 @@ private Control_Main control;
 	private int quantity;
 	private BigDecimal price;
 
+	/**
+	 * Default Constructor creates frame and connects action handlers to
+	 * buttons.
+	 */
 	public AddProduct()
 	{
 		control = new Control_Main();
-		//frame = new JFrame("New Employee");
-		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// frame = new JFrame("New Employee");
+		// frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 
 		JLabel lblDescription = new JLabel("Description:");
@@ -73,7 +84,6 @@ private Control_Main control;
 		priceInput.setBounds(158, 83, 86, 20);
 		getContentPane().add(priceInput);
 
-		
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener()
 		{
@@ -101,7 +111,8 @@ private Control_Main control;
 					}
 					else
 					{
-						quantity = Integer.parseInt(quantityInput.getText().trim());
+						quantity = Integer
+								.parseInt(quantityInput.getText().trim());
 					}
 					if(categoryInput == null
 							|| categoryInput.getText().trim().equals(""))
@@ -114,7 +125,8 @@ private Control_Main control;
 					{
 						category = categoryInput.getText().trim();
 					}
-					if(priceInput == null || priceInput.getText().trim().equals(""))
+					if(priceInput == null
+							|| priceInput.getText().trim().equals(""))
 					{
 
 						JOptionPane.showMessageDialog(null,
@@ -122,21 +134,21 @@ private Control_Main control;
 					}
 					else
 					{
-						
+
 						price = new BigDecimal(priceInput.getText());
-						
+
 					}
-					
+
 					if(description != null && quantity != 0 && category != null
-							&& price != null
-							)
+							&& price != null)
 					{
-						control.addProduct(description, quantity, category, price);
+						control.addProduct(description, quantity, category,
+								price);
 						descriptionInput.setText("");
 						quantityInput.setText("");
 						categoryInput.setText("");
 						priceInput.setText("");
-						
+
 					}
 				}
 				catch(NullPointerException ex)
@@ -149,8 +161,10 @@ private Control_Main control;
 		getContentPane().add(btnSubmit);
 
 		JButton btnCancel = new JButton("Clear");
-		btnCancel.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnCancel.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
 				descriptionInput.setText("");
 				quantityInput.setText("");
 				categoryInput.setText("");
@@ -160,5 +174,5 @@ private Control_Main control;
 		btnCancel.setBounds(183, 284, 89, 23);
 		getContentPane().add(btnCancel);
 	}
-	
+
 }
